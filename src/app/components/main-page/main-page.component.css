@@ -2,32 +2,50 @@
   width: fit-content;
 }
 
-.name-input {
-  font-size: 12px;
-}
-
 .form-wrapper,
 .row-container {
   display: flex;
   flex-direction: row;
+  gap: var(--spacing-default);
   align-items: center;
-  gap: var(--spading-default);
+}
+
+.form-wrapper {
+  gap: calc(2 * var(--spacing-default));
 }
 
 .row-container {
-  margin: var(--spading-default);
   align-items: flex-start;
-}
-
-::ng-deep .mat-form-field-wrapper {
-  padding: 0;
+  margin: var(--spacing-default);
 }
 
 ::ng-deep .mat-mini-fab {
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
 }
 
 .result-content {
+  overflow: auto;
   width: 100%;
+}
+
+.json-data {
+  overflow: auto;
+  padding: var(--spacing-small) 0;
+  margin: 0;
+}
+
+.json-data::-webkit-scrollbar {
+  height: 6px;
+  background-color: transparent;
+}
+
+.json-data::-webkit-scrollbar-track {
+  border-radius: 3px;
+  box-shadow: inset 0 0 3px rgba(28, 28, 28, 0.3);
+  background-color: rgb(61, 61, 61);
+}
+.json-data::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgb(28, 28, 28);
 }

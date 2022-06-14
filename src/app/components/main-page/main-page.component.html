@@ -4,7 +4,7 @@
       <h2>Search form</h2>
 
       <div class="form-wrapper">
-        <mat-form-field class="name-input" appearance="outline">
+        <mat-form-field class="name-input" appearance="standard">
           <mat-label>Summoner name</mat-label>
           <input matInput [(ngModel)]="filter.name" />
         </mat-form-field>
@@ -22,7 +22,8 @@
 
   <div class="result-content">
     <mat-card>
-      <pre *ngIf="responseData"> {{ responseData }}</pre>
+      <h2>Summoner Profile</h2>
+      <pre class="json-data" *ngIf="responseData"> {{ responseData }}</pre>
     </mat-card>
   </div>
 </div>

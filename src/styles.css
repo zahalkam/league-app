@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --spading-small: 0.6rem;
-  --spading-default: 1rem;
+  --spacing-small: 0.6rem;
+  --spacing-default: 1rem;
 }
 
 html,
@@ -12,5 +12,11 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/* .mat-typography h2,
+.mat-typography h1,
+.mat-typography p,
+.mat-form-field {
+  font-family: "Times New Roman", Times, serif;
+} */
