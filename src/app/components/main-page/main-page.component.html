@@ -23,7 +23,25 @@
   <div class="result-content">
     <mat-card>
       <h2>Summoner Profile</h2>
-      <pre class="json-data" *ngIf="responseData"> {{ responseData }}</pre>
+      <h2 *ngIf="rawSummonerData">{{ rawSummonerData?.name }}</h2>
+      <img
+        class="summoner-icon"
+        *ngIf="profileIcon"
+        [src]="
+          'http://ddragon.leagueoflegends.com/cdn/12.11.1/img/profileicon/' +
+          profileIcon +
+          '.png'
+        "
+      />
+      <pre class="json-data" *ngIf="responseSummonerData">
+ {{ responseSummonerData }}</pre
+      >
+    </mat-card>
+    <mat-card>
+      <h2>Recent match IDs</h2>
+      <pre class="json-data" *ngIf="responseMatchData">
+    {{ responseMatchData }}</pre
+      >
     </mat-card>
   </div>
 </div>
