@@ -1,0 +1,28 @@
+<div class="row-container">
+  <div class="search-form">
+    <mat-card>
+      <h2>Search form</h2>
+
+      <div class="form-wrapper">
+        <mat-form-field class="name-input" appearance="outline">
+          <mat-label>Summoner name</mat-label>
+          <input matInput [(ngModel)]="filter.name" />
+        </mat-form-field>
+        <button
+          mat-mini-fab
+          color="primary"
+          class="toggle-sidenav-button"
+          (click)="search()"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="result-content">
+    <mat-card>
+      <pre *ngIf="responseData"> {{ responseData }}</pre>
+    </mat-card>
+  </div>
+</div>

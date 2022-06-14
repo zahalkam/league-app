@@ -1,0 +1,33 @@
+.search-form {
+  width: fit-content;
+}
+
+.name-input {
+  font-size: 12px;
+}
+
+.form-wrapper,
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spading-default);
+}
+
+.row-container {
+  margin: var(--spading-default);
+  align-items: flex-start;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding: 0;
+}
+
+::ng-deep .mat-mini-fab {
+  width: 46px;
+  height: 46px;
+}
+
+.result-content {
+  width: 100%;
+}

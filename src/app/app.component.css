@@ -1,0 +1,27 @@
+h1 {
+  margin: 0 var(--spading-default);
+}
+
+.main-container {
+  height: 100%;
+  width: 100%;
+}
+
+.main-content {
+  height: 100%;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.12);
+}
+
+.toggle-sidenav-button {
+  margin: var(--spading-small);
+}
+
+.main-sidenav {
+  min-width: 200px;
+}
