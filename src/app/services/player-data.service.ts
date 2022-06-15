@@ -25,7 +25,7 @@ export class PlayerDataService {
   search(filter: SearchFilter): void {
     this.httpClient
       .get(
-        `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${filter.name}?api_key=RGAPI-5f396edc-6d6b-4ae5-a424-1bc4285ca960`
+        `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${filter.name}?api_key=RGAPI-134593a8-4b53-4fb2-aab5-776edf331aa6`
       )
       .subscribe((data: BasicPlayerProperties) => {
         console.log(data);
@@ -38,7 +38,7 @@ export class PlayerDataService {
   getMatches(puuid: string | undefined): void {
     this.httpClient
       .get(
-        `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=RGAPI-5f396edc-6d6b-4ae5-a424-1bc4285ca960`
+        `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=RGAPI-134593a8-4b53-4fb2-aab5-776edf331aa6`
       )
       .subscribe((data: any) => {
         console.log(data);

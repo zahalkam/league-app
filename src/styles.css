@@ -6,6 +6,7 @@
   --font-size-large: 1.6rem;
   --font-size-huge: 2rem;
 
+  --spacing-tiny: 0.4em;
   --spacing-small: 0.6em;
   --spacing-default: 1em;
   --spacing-large: 1.5em;
@@ -53,6 +54,12 @@ pre {
 
 .mat-drawer-side {
   border-right: 1px solid var(--color-accent);
+}
+
+.mat-card {
+  margin: var(--spacing-tiny);
+  border: 1px solid var(--color-accent-dimmed);
+  box-shadow: 0 0 8px -3px var(--color-primary) !important;
 }
 
 .mat-fab .mat-button-wrapper {
