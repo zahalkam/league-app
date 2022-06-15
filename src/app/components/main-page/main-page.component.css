@@ -1,3 +1,7 @@
+h2 {
+  color: var(--color-accent);
+}
+
 .search-form {
   width: fit-content;
 }

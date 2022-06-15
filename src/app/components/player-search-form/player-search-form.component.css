@@ -1,3 +1,7 @@
+h2 {
+  color: var(--color-accent);
+}
+
 .form-wrapper {
   display: flex;
   flex-direction: row;
@@ -5,7 +9,11 @@
   gap: calc(2 * var(--spacing-default));
 }
 
-::ng-deep .mat-mini-fab {
-  width: 50px;
-  height: 50px;
+.name-input {
+  font-size: var(--font-size-default);
+}
+
+.mat-mini-fab {
+  width: 45px;
+  height: 45px;
 }

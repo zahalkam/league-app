@@ -7,17 +7,14 @@ h1 {
   width: 100%;
 }
 
-.main-content {
-}
-
 .main-header {
-  background-color: #303030;
+  background-color: var(--color-primary);
   width: 100%;
   height: 74px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.12);
+  border-bottom: solid 1px var(--color-accent);
 }
 
 .toggle-sidenav-button {
