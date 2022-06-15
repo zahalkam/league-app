@@ -11,8 +11,9 @@
   --spacing-large: 1.5em;
 
   --color-primary: rgb(194, 24, 91);
-  --color-primary-dimmed: rgb(158, 20, 75);
+  --color-primary-dimmed: rgba(194, 24, 91, 0.3);
   --color-accent: rgb(176, 190, 197);
+  --color-accent-dimmed: rgba(176, 190, 197, 0.3);
   --color-warn: rgb(244, 67, 54);
 }
 
@@ -50,12 +51,12 @@ pre {
   font-size: var(--font-size-default);
 }
 
-.mat-card {
-  border: 1px solid var(--color-primary-dimmed);
-}
-
 .mat-drawer-side {
   border-right: 1px solid var(--color-accent);
+}
+
+.mat-fab .mat-button-wrapper {
+  padding: 0 !important;
 }
 
 /* Style browser scrollbar */
@@ -71,6 +72,5 @@ pre {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: var(--color-primary-dimmed);
+  background-color: var(--color-accent-dimmed);
 }
