@@ -1,3 +1,7 @@
+h2 {
+  color: var(--color-accent);
+}
+
 .main-page-container {
   margin: var(--spacing-default);
 }
