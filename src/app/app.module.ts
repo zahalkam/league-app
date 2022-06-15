@@ -12,9 +12,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { PlayerSearchFormComponent } from './components/player-search-form/player-search-form.component';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent],
+  declarations: [AppComponent, MainPageComponent, PlayerSearchFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

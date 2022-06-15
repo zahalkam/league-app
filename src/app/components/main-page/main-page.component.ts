@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { BasicPlayerProperties } from 'src/app/model/basic-player-properties';
+import { PlayerDataService } from 'src/app/services/player-data.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,39 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  responseSummonerData: string;
-  rawSummonerData: any;
-  responseMatchData: string;
-  profileIcon: number;
-  filter = {
-    name: '',
-  };
-  constructor(private httpClient: HttpClient) {}
+  playerData: BasicPlayerProperties;
+  rawPlayerData: string | undefined;
+  rawMatchData: string | undefined;
+  profileIcon: number | undefined;
 
-  ngOnInit(): void {}
+  constructor(private playerDataService: PlayerDataService) {}
 
-  search(): void {
-    this.httpClient
-      .get(
-        `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${this.filter.name}?api_key=RGAPI-5f396edc-6d6b-4ae5-a424-1bc4285ca960`
-      )
-      .subscribe((data: any) => {
-        console.log(data);
-        this.profileIcon = data.profileIconId;
-        this.rawSummonerData = data;
-        this.responseSummonerData = JSON.stringify(data, null, '\t');
-        this.getMatches(data.puuid);
-      });
-  }
-
-  getMatches(puuid: string): void {
-    this.httpClient
-      .get(
-        `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=RGAPI-5f396edc-6d6b-4ae5-a424-1bc4285ca960`
-      )
-      .subscribe((data) => {
-        console.log(data);
-        this.responseMatchData = JSON.stringify(data, null, '\t');
-      });
+  ngOnInit(): void {
+    this.playerDataService.rawPlayerData.subscribe(
+      (data: string | undefined) => {
+        this.rawPlayerData = data;
+      }
+    );
+    this.playerDataService.rawMatchData.subscribe(
+      (data: string | undefined) => {
+        this.rawMatchData = data;
+      }
+    );
+    this.playerDataService.responsePlayerData.subscribe(
+      (data: BasicPlayerProperties | undefined) => {
+        this.profileIcon = data?.profileIconId;
+      }
+    );
   }
 }

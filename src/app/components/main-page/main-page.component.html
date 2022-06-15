@@ -1,29 +1,10 @@
 <div class="row-container">
-  <div class="search-form">
-    <mat-card>
-      <h2>Search form</h2>
-
-      <div class="form-wrapper">
-        <mat-form-field class="name-input" appearance="standard">
-          <mat-label>Summoner name</mat-label>
-          <input matInput [(ngModel)]="filter.name" />
-        </mat-form-field>
-        <button
-          mat-mini-fab
-          color="primary"
-          class="toggle-sidenav-button"
-          (click)="search()"
-        >
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-    </mat-card>
-  </div>
+  <app-player-search-form class="search-form"></app-player-search-form>
 
   <div class="result-content">
     <mat-card>
       <h2>Summoner Profile</h2>
-      <h2 *ngIf="rawSummonerData">{{ rawSummonerData?.name }}</h2>
+      <h2 *ngIf="playerData">{{ playerData?.name }}</h2>
       <img
         class="summoner-icon"
         *ngIf="profileIcon"
@@ -33,15 +14,11 @@
           '.png'
         "
       />
-      <pre class="json-data" *ngIf="responseSummonerData">
- {{ responseSummonerData }}</pre
-      >
+      <pre class="json-data" *ngIf="rawPlayerData"> {{ rawPlayerData }}</pre>
     </mat-card>
     <mat-card>
       <h2>Recent match IDs</h2>
-      <pre class="json-data" *ngIf="responseMatchData">
-    {{ responseMatchData }}</pre
-      >
+      <pre class="json-data" *ngIf="rawMatchData">    {{ rawMatchData }}</pre>
     </mat-card>
   </div>
 </div>
